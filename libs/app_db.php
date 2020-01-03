@@ -53,7 +53,7 @@ from freelancers f1
 left join freelancerCategory C2 on f1.id = C2.freelancerId
 left join categories c3 on C2.categoryId = c3.id
 left join files f on f1.pictureId = f.id
-where f1.featured = 1 AND c3.name = '$category'
+where f1.featured = 1 AND c3.name = '$category' AND f1.published = 1
 ORDER BY RAND()
 LIMIT 6
 ";
