@@ -111,11 +111,10 @@
 
         <div class="row">
             <div class="col-12 col-lg-3 offset-lg-1">
-                <h4 class="mb-4">How to Use</h4>
+                <h4 class="mb-4">Our Mission</h4>
                 <p class="lead">
                     We are dedicated to help freelancers and companies rethink how to do business.
-                    We offer SmartContract powered solution for reducing legal overhead while maintaining high standard
-                    for quality of work.
+                    We offer SmartContract powered solution for reducing fees and legal overhead.
                 </p>
             </div>
         </div>
