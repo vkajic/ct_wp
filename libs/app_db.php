@@ -38,7 +38,7 @@ class AppDb
 FROM tasks
 LEFT JOIN clients c2 on tasks.postedBy = c2.id
 WHERE tasks.deletedAt IS NULL AND tasks.featured = 1 AND tasks.status = 0
-ORDER BY RAND()
+ORDER BY tasks.createdAt DESC
 LIMIT 4");
     }
 
