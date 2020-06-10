@@ -25,7 +25,7 @@ function add_theme_scripts()
     if ($css) {
         wp_enqueue_style('app', cryptotask_get_option('app_css'), array(), '0.0.1', 'all');
     }
-    wp_enqueue_style('style', get_stylesheet_uri(), ['app']);
+    wp_enqueue_style('style', get_stylesheet_uri(), ['app'], '0.0.2');
 }
 
 add_action('wp_enqueue_scripts', 'add_theme_scripts');
