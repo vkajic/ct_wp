@@ -17,8 +17,9 @@
                 <div class="logo">
                     <a href="/" class="router-link-active">
                         <span class="back">
-                            <img src="<?php bloginfo('template_url'); ?>/assets/img/cryptotask-logo.svg"
-                                 alt="Cryptotask">
+                            <img data-light="<?php bloginfo('template_url'); ?>/assets/img/cryptotask-logo.svg"
+                                 data-dark="<?php bloginfo('template_url'); ?>/assets/img/cryptotask-logo--light.svg"
+                                 alt="Cryptotask" class="d-none logo-image">
                         </span>
                     </a>
                 </div>
@@ -31,10 +32,14 @@
                 ?>
             </div>
             <div class="col-7 col-lg-2 d-flex justify-content-end align-content-center">
+                <a href="#" class="theme-switcher d-flex align-items-center mr-3">
+                    <i data-feather="sun" style="display:none;"></i>
+                    <i data-feather="moon" style="display:none;"></i>
+                </a>
                 <div class="user-info-widget d-flex align-items-center pr-4">
                     <ul class="list-unstyled mb-0 list-inline">
                         <li class="list-inline-item">
-                            <a href="<?php echo cryptotask_get_option('app_url'); ?>">Start</a>
+                            <a class="app-link" href="<?php echo cryptotask_get_option('app_url'); ?>">Start</a>
                         </li>
                     </ul>
                 </div>

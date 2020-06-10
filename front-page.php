@@ -7,18 +7,18 @@
                 <h1 class="mb-3 mb-lg-4 display-1 font-weight-bold mr-7 mr-lg-0"><?php the_title(); ?></h1>
                 <div class="d-lg-none mb-4">
                     <a href="<?php echo cryptotask_get_option('app_url'); ?>/create-task"
-                       class="btn btn-round btn-info mr-3">Post Job</a>
+                       class="btn btn-round btn-info mr-3 app-link">Post Job</a>
                     <a href="<?php echo cryptotask_get_option('app_url'); ?>/tasks"
-                       class="btn btn-round btn-outline-dark">Browse Jobs</a>
+                       class="btn btn-round btn-outline-dark app-link">Browse Jobs</a>
                 </div>
                 <div class="mb-4 lead">
                     <?php the_content(); ?>
                 </div>
                 <div class="d-none d-lg-block">
                     <a href="<?php echo cryptotask_get_option('app_url'); ?>/create-task"
-                       class="btn btn-round btn-info mr-3">Post Job</a>
+                       class="btn btn-round btn-info mr-3 app-link">Post Job</a>
                     <a href="<?php echo cryptotask_get_option('app_url'); ?>/tasks"
-                       class="btn btn-round btn-outline-dark">Browse Jobs</a>
+                       class="btn btn-round btn-outline-dark app-link">Browse Jobs</a>
                 </div>
             </div>
         </div>
@@ -27,7 +27,7 @@
             <div class="col-12 col-lg-7 offset-lg-1">
                 <div class="d-flex align-items-end mb-4 justify-content-between justify-content-lg-start">
                     <h3 class="mb-0 mr-3">Featured Freelancers</h3>
-                    <a href="<?php echo cryptotask_get_option('app_url'); ?>/freelancers">
+                    <a href="<?php echo cryptotask_get_option('app_url'); ?>/freelancers" class="app-link">
                         <u>Browse <span class="d-none d-lg-inline">Freelancers</span></u>
                     </a>
                 </div>
@@ -60,7 +60,7 @@
                                             <li class="col-6 col-xl-4">
                                                 <div class="pb-5">
                                                     <a href="<?php echo cryptotask_get_option('app_url'); ?>/freelancers/<?php echo $freelancer['id']; ?>"
-                                                       class="freelancer d-block">
+                                                       class="freelancer d-block app-link">
                                                         <img class="avatar d-block mb-3"
                                                              src="<?php echo $freelancer['picture']; ?>"
                                                              alt="<?php echo $freelancer['name']; ?>"/>
@@ -94,7 +94,8 @@
                         <li class="mb-4 mb-lg-5">
                             <?php echo $project->client_name; ?>
                             <h3 class="my-2">
-                                <a href="<?php echo cryptotask_get_option('app_url'); ?>/tasks/<?php echo $project->id; ?>">
+                                <a href="<?php echo cryptotask_get_option('app_url'); ?>/tasks/<?php echo $project->id; ?>"
+                                   class="app-link">
                                     <?php echo $project->title; ?>
                                 </a>
                             </h3>

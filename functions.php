@@ -18,6 +18,7 @@ function add_theme_scripts()
     wp_enqueue_script('popper', '//cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js', ['jquery'], '1.14.7');
     wp_enqueue_script('bootstrap', '//stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js', ['jquery', 'popper'], '4.3.1');
     wp_enqueue_script('feather', '//cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js', ['jquery'], '0.0.1');
+    wp_enqueue_script('custom', get_template_directory_uri() . '/assets/js/custom.js', ['jquery'], '0.0.2');
 
     $css = cryptotask_get_option('app_css');
 
@@ -59,6 +60,7 @@ function nav_menu_link_atts($atts, $item, $args, $depth)
 {
     if ('/' === substr($atts['href'], 0, 1)) {
         $atts['href'] = cryptotask_get_option('app_url') . $atts['href'];
+        $atts['class'] = 'app-link';
     }
     return $atts;
 }

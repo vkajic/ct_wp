@@ -7,7 +7,7 @@
 </div>
 
 <script>
-    feather.replace()
+    feather.replace({ width: '1.5em', height: '1.5em' });
 </script>
 
 <?php wp_footer(); ?>

@@ -45,9 +45,12 @@ header.main-header {
     height: 3.5rem;
 }
 
-header.main-header .feather {
-    width: 32px;
-    height: 32px;
+.dark-theme header.main-header svg {
+    stroke: #b9bbc0;
+}
+
+header.main-header .dropdown {
+    width: initial;
 }
 
 .logo img {
