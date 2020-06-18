@@ -37,7 +37,7 @@ class AppDb
         return $this->db->get_results("SELECT tasks.id, tasks.title, c2.name AS client_name, tasks.createdAt, tasks.duration, tasks.type, tasks.location
 FROM tasks
 LEFT JOIN clients c2 on tasks.postedBy = c2.id
-WHERE tasks.deletedAt IS NULL AND tasks.featured = 1 AND tasks.status = 0
+WHERE tasks.deletedAt IS NULL AND tasks.featured = 1 AND tasks.status = 0 AND tasks.published = 1
 ORDER BY tasks.createdAt DESC
 LIMIT 4");
     }
