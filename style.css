@@ -68,3 +68,5 @@ header.main-header .dropdown {
         height: auto;
     }
 }
+
+.dropdown-toggle:after { content: none }
