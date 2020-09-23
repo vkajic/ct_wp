@@ -45,12 +45,12 @@ header.main-header {
     height: 3.5rem;
 }
 
-.dark-theme header.main-header svg {
-    stroke: #b9bbc0;
-}
-
 header.main-header .dropdown {
     width: initial;
+}
+
+.dark-theme .mobile-menu-dropdown svg {
+    stroke: #b9bbc0;
 }
 
 .logo img {

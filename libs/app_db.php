@@ -98,6 +98,13 @@ LIMIT 6
         $req = base64_encode(json_encode([
             'bucket' => 'cryptotask-public',
             'key' => $name,
+	        'edits' => [
+	        	'rotate' => null,
+		        'resize' => [
+		        	'height' => 260,
+			        'width' => 320
+		        ]
+	        ]
         ]));
 
         return cryptotask_get_option('app_s3_url') . '/' . $req;

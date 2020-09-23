@@ -26,7 +26,7 @@ function add_theme_scripts() {
 	if ( $css ) {
 		wp_enqueue_style( 'app', cryptotask_get_option( 'app_css' ), array(), '0.0.1', 'all' );
 	}
-	wp_enqueue_style( 'style', get_stylesheet_uri(), [ 'app' ], '0.0.3' );
+	wp_enqueue_style( 'style', get_stylesheet_uri(), [ 'app' ], '0.0.4' );
 }
 
 add_action( 'wp_enqueue_scripts', 'add_theme_scripts' );
@@ -59,7 +59,7 @@ add_filter( 'nav_menu_css_class', 'menu_classes', 1, 3 );
 function nav_menu_link_atts( $atts, $item, $args, $depth ) {
 	$lang = ICL_LANGUAGE_CODE;
 	if ( '/' === substr( $atts['href'], 0, 1 ) ) {
-		$atts['href'] = cryptotask_get_option( 'app_url_' . $lang ) . $atts['href'];
+		$atts['href']  = cryptotask_get_option( 'app_url_' . $lang ) . $atts['href'];
 		$atts['class'] = 'app-link';
 	}
 

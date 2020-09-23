@@ -13,7 +13,7 @@
 <header class="main-header d-flex align-items-center">
     <div class="container">
         <div class="row align-items-center">
-            <div class="col-5 col-lg-3 col-xxl-2 d-flex text-lg-left text-center align-content-center">
+            <div class="col-5 col-xl-3 col-xxl-2 d-flex text-lg-left text-center align-content-center">
                 <div class="logo">
                     <a href="/" class="router-link-active">
                         <span class="back">
@@ -24,7 +24,7 @@
                     </a>
                 </div>
             </div>
-            <div class="d-none col-lg-7 col-xxl-8 d-lg-flex align-content-center">
+            <div class="d-none col-xl-6 col-xxl-7 d-xl-flex align-content-center px-0">
 				<?php
 				wp_nav_menu( array(
 					'theme_location' => 'main-menu',
@@ -32,14 +32,14 @@
 				) );
 				?>
             </div>
-            <div class="col-7 col-lg-2 d-flex justify-content-end align-content-center">
+            <div class="col-7 col-xl-3 d-flex justify-content-end align-content-center ml-auto">
                 <a href="#" class="theme-switcher d-flex align-items-center">
                     <i data-feather="sun" style="display:none;"></i>
                     <i data-feather="moon" style="display:none;"></i>
                 </a>
 				<?php $languages = apply_filters( 'wpml_active_languages', NULL, 'orderby=id&order=desc' ); ?>
                 <div class="dropdown px-4 w-auto">
-                    <button class="btn btn-link btn-lg dropdown-toggle border-0 m-0 p-0 d-flex align-items-center"
+                    <button class="btn btn-link btn-lg dropdown-toggle h-100 border-0 m-0 p-0 d-flex align-items-center"
                             type="button" id="dropdownMenuButton"
                             data-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false">
                         <span class="small language-button">
@@ -65,7 +65,7 @@
                     </ul>
                 </div>
 
-                <div class="dropdown d-lg-none">
+                <div class="dropdown mobile-menu-dropdown d-xl-none">
                     <button class="btn btn-link p-0 m-0 d-flex align-items-center" type="button" id="dropdownMenuButton"
                             data-toggle="dropdown"
                             data-boundary="window"
