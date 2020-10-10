@@ -33,12 +33,14 @@
                     </a>
                 </div>
 				<?php $freelancersData = $app_db->get_featured_freelancers(ICL_LANGUAGE_CODE); ?>
+                <?php $flCount = count($freelancersData); ?>
+                <?php $randomTab = rand(0, $flCount - 1); ?>
 				<?php $i = 0; ?>
                 <!-- Nav tabs -->
                 <ul class="nav nav-tabs mb-3" role="tablist" id="freelancers">
 					<?php foreach ( $freelancersData as $cat => $freelancers ) : ?>
                         <li class="nav-item">
-                            <a class="d-inline nav-link <?php echo $i === 0 ? 'active' : ''; ?>" data-toggle="tab"
+                            <a class="d-inline nav-link <?php echo $i === $randomTab ? 'active' : ''; ?>" data-toggle="tab"
                                href="#tab-<?php echo $i; ?>" role="tab"
                                aria-controls="<?php echo md5( $cat ); ?>" aria-selected="true"><?php echo $cat; ?></a>
                             <span> / </span>
@@ -51,7 +53,7 @@
                 <div class="tab-content" id="freelancersContent">
 					<?php $i = 0; ?>
 					<?php foreach ( $freelancersData as $cat => $freelancers ) : ?>
-                        <div class="tab-pane fade <?php echo $i === 0 ? 'show active' : ''; ?>"
+                        <div class="tab-pane fade <?php echo $i === $randomTab ? 'show active' : ''; ?>"
                              id="tab-<?php echo $i; ?>"
                              role="tabpanel">
                             <div class="row">

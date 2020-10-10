@@ -17,9 +17,17 @@
                 <div class="logo">
                     <a href="/" class="router-link-active">
                         <span class="back">
-                            <img data-light="<?php bloginfo( 'template_url' ); ?>/assets/img/cryptotask-logo.svg"
-                                 data-dark="<?php bloginfo( 'template_url' ); ?>/assets/img/cryptotask-logo--light.svg"
-                                 alt="Cryptotask" class="d-none logo-image">
+                            <?php $currentLanguage = ICL_LANGUAGE_CODE; ?>
+
+	                        <?php if ( $currentLanguage === 'hr' ) : ?>
+                                <img data-light="<?php bloginfo( 'template_url' ); ?>/assets/img/powered_by_cryptotask_dnevni.png"
+                                     data-dark="<?php bloginfo( 'template_url' ); ?>/assets/img/powered_by_cryptotask_nocni.png"
+                                     alt="Freelance.hr" class="d-none logo-image">
+	                        <?php else : ?>
+                                <img data-light="<?php bloginfo( 'template_url' ); ?>/assets/img/cryptotask-logo.svg"
+                                     data-dark="<?php bloginfo( 'template_url' ); ?>/assets/img/cryptotask-logo--light.svg"
+                                     alt="Cryptotask" class="d-none logo-image">
+	                        <?php endif; ?>
                         </span>
                     </a>
                 </div>
@@ -37,7 +45,7 @@
                     <i data-feather="sun" style="display:none;"></i>
                     <i data-feather="moon" style="display:none;"></i>
                 </a>
-				<?php $languages = apply_filters( 'wpml_active_languages', NULL, 'orderby=id&order=desc' ); ?>
+				<?php $languages = apply_filters( 'wpml_active_languages', null, 'orderby=id&order=desc' ); ?>
                 <div class="dropdown px-4 w-auto">
                     <button class="btn btn-link btn-lg dropdown-toggle h-100 border-0 m-0 p-0 d-flex align-items-center"
                             type="button" id="dropdownMenuButton"
@@ -60,7 +68,7 @@
                     <ul class="list-unstyled mb-0 list-inline">
                         <li class="list-inline-item">
                             <a class="app-link"
-                               href="<?php echo cryptotask_get_option( 'app_url' ); ?>"><?php _e( 'Start', 'cryptotask' ); ?></a>
+                               href="<?php echo cryptotask_get_option( 'app_url_' . ICL_LANGUAGE_CODE ); ?>"><?php _e( 'Start', 'cryptotask' ); ?></a>
                         </li>
                     </ul>
                 </div>
@@ -83,6 +91,5 @@
                 </div>
             </div>
         </div>
-    </div>
     </div>
 </header>
