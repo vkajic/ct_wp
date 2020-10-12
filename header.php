@@ -1,9 +1,11 @@
+<?php $currentLanguage = ICL_LANGUAGE_CODE; ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
 <head>
     <meta charset="<?php bloginfo( 'charset' ); ?>"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <link rel="profile" href="https://gmpg.org/xfn/11"/>
+    <link rel="icon" href="<?php bloginfo( 'template_url' ); ?>/assets/img/favicon-<?php echo $currentLanguage; ?>.ico"/>
 	<?php wp_head(); ?>
 </head>
 
@@ -17,8 +19,6 @@
                 <div class="logo">
                     <a href="/" class="router-link-active">
                         <span class="back">
-                            <?php $currentLanguage = ICL_LANGUAGE_CODE; ?>
-
 	                        <?php if ( $currentLanguage === 'hr' ) : ?>
                                 <img data-light="<?php bloginfo( 'template_url' ); ?>/assets/img/powered_by_cryptotask_dnevni.png"
                                      data-dark="<?php bloginfo( 'template_url' ); ?>/assets/img/powered_by_cryptotask_nocni.png"
