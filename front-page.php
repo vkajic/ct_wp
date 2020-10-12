@@ -27,20 +27,22 @@
             <div class="col-12 col-lg-7 offset-lg-1">
                 <div class="d-flex align-items-end mb-4 justify-content-between justify-content-lg-start">
                     <h3 class="mb-0 mr-3"><?php _e( 'Featured Freelancers', 'cryptotask' ); ?></h3>
-                    <a href="<?php echo cryptotask_get_option( 'app_url_' . ICL_LANGUAGE_CODE ); ?>/freelancers" class="app-link">
+                    <a href="<?php echo cryptotask_get_option( 'app_url_' . ICL_LANGUAGE_CODE ); ?>/freelancers"
+                       class="app-link">
                         <u><?php _e( 'Browse', 'cryptotask' ); ?> <span
                                     class="d-none d-lg-inline"><?php _e( 'Freelancers', 'cryptotask' ); ?></span></u>
                     </a>
                 </div>
-				<?php $freelancersData = $app_db->get_featured_freelancers(ICL_LANGUAGE_CODE); ?>
-                <?php $flCount = count($freelancersData); ?>
-                <?php $randomTab = rand(0, $flCount - 1); ?>
+				<?php $freelancersData = $app_db->get_featured_freelancers( ICL_LANGUAGE_CODE ); ?>
+				<?php $flCount = count( $freelancersData ); ?>
+				<?php $randomTab = rand( 0, $flCount - 1 ); ?>
 				<?php $i = 0; ?>
                 <!-- Nav tabs -->
                 <ul class="nav nav-tabs mb-3" role="tablist" id="freelancers">
 					<?php foreach ( $freelancersData as $cat => $freelancers ) : ?>
                         <li class="nav-item">
-                            <a class="d-inline nav-link <?php echo $i === $randomTab ? 'active' : ''; ?>" data-toggle="tab"
+                            <a class="d-inline nav-link <?php echo $i === $randomTab ? 'active' : ''; ?>"
+                               data-toggle="tab"
                                href="#tab-<?php echo $i; ?>" role="tab"
                                aria-controls="<?php echo md5( $cat ); ?>" aria-selected="true"><?php echo $cat; ?></a>
                             <span> / </span>
@@ -81,7 +83,7 @@
 					<?php endforeach; ?>
                 </div>
             </div>
-			<?php $projects = $app_db->get_featured_projects(ICL_LANGUAGE_CODE); ?>
+			<?php $projects = $app_db->get_featured_projects( ICL_LANGUAGE_CODE ); ?>
             <div class="col-12 col-lg-3">
                 <div class="d-flex flex-column flex-lg-row align-items-lg-end mb-4">
                     <h3 class="mb-0 mr-3"><?php _e( 'Featured Projects', 'cryptotask' ); ?></h3>
@@ -117,11 +119,32 @@
             <div class="col-12 col-lg-3 offset-lg-1">
                 <h4 class="mb-4"><?php _e( 'Our Mission', 'cryptotask' ); ?></h4>
                 <p class="lead">
-	                <?php _e( 'We are dedicated to helping freelancers and companies rethink how to do business. We offer SmartContract powered solution for reducing fees and legal overhead.', 'cryptotask' ); ?>
+					<?php _e( 'We are dedicated to helping freelancers and companies rethink how to do business. We offer SmartContract powered solution for reducing fees and legal overhead.', 'cryptotask' ); ?>
                 </p>
             </div>
         </div>
     </div>
+
+	<?php if ( ICL_LANGUAGE_CODE === 'hr' ) : ?>
+        <div class="modal fade" id="welcomeModal" tabindex="-1" aria-labelledby="welcomeModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="welcomeModalLabel"><?php _e( 'Welcome', 'cryptotask' ); ?></h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+	                    <?php _e( 'Welcome to new Freelance.hr', 'cryptotask' ); ?>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal"><?php _e( 'Close', 'cryptotask' ); ?></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+	<?php endif; ?>
 <?php endwhile; endif; ?>
 
 <?php get_footer();

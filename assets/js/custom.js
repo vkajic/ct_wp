@@ -4,8 +4,12 @@ jQuery(document).ready(function () {
     const themeSwitcher = jQuery('.theme-switcher');
     const logo = jQuery('.logo-image');
     let link = 'light';
+    const welcome = localStorage.getItem('welcome');
 
-    console.log(mode);
+    if (!welcome) {
+        $('#welcomeModal').modal();
+        localStorage.setItem('welcome', 'yes');
+    }
 
     if ((darkTheme && darkTheme === 'enabled') && !mode) {
         jQuery('body').addClass('dark-theme');

@@ -19,7 +19,7 @@ function add_theme_scripts() {
 		'popper'
 	], '4.3.1' );
 	wp_enqueue_script( 'feather', '//cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js', [ 'jquery' ], '0.0.1' );
-	wp_enqueue_script( 'custom', get_template_directory_uri() . '/assets/js/custom.js', [ 'jquery' ], '0.0.2' );
+	wp_enqueue_script( 'custom', get_template_directory_uri() . '/assets/js/custom.js', [ 'jquery' ], '0.0.4' );
 
 	$css = cryptotask_get_option( 'app_css' );
 
