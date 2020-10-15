@@ -40,7 +40,7 @@ class AppDb
         return $this->db->get_results("SELECT tasks.id, tasks.title, c2.name AS client_name, tasks.createdAt, tasks.duration, tasks.type, tasks.location
 FROM tasks
 LEFT JOIN clients c2 on tasks.postedBy = c2.id
-WHERE tasks.deletedAt IS NULL AND tasks.featured = 1 AND tasks.status = 0 AND tasks.languageId = $languageId
+WHERE tasks.deletedAt IS NULL AND tasks.featured = 1 AND tasks.status = 0 AND tasks.languageId = $languageId AND tasks.published = 1
 ORDER BY tasks.createdAt DESC
 LIMIT 4");
     }
@@ -60,7 +60,7 @@ left join freelancerCategory C2 on f1.id = C2.freelancerId
 left join categories c3 on C2.categoryId = c3.id
 left join files f on f1.pictureId = f.id
 left join users u on u.id = f1.userId
-where f1.featured = 1 AND c3.name = '$category' AND f1.published = 1 AND u.languageId = $languageId
+where f1.featured = 1 AND c3.name = '$category' AND f1.published = 1 AND u.languageId = $languageId AND u.confirmed = 1
 ORDER BY RAND()
 LIMIT 6
 ";
