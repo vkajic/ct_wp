@@ -30,10 +30,10 @@ if (!class_exists('WP_Bootstrap_Navwalker')) {
          */
         public function start_el(&$output, $item, $depth = 0, $args = array(), $id = 0)
         {
-            $href = $item->url;
+	        $href = $item->url;
 
             if ('/' === substr($href, 0, 1)) {
-                $href = cryptotask_get_option('app_url') . $href;
+                $href = cryptotask_get_option( 'app_url_' . ICL_LANGUAGE_CODE ) . $href;
             }
 
             $attributes  = '';
