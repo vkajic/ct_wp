@@ -7,6 +7,16 @@
     <link rel="profile" href="https://gmpg.org/xfn/11"/>
     <link rel="icon" href="<?php bloginfo( 'template_url' ); ?>/assets/img/favicon-<?php echo $currentLanguage; ?>.ico"/>
 	<?php wp_head(); ?>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=<?php echo $currentLanguage == 'en' ? 'UA-109515146-1' : 'UA-187530-34'; ?>"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', '<?php echo $currentLanguage == 'en' ? 'UA-109515146-1' : 'UA-187530-34'; ?>');
+    </script>
 </head>
 
 <body <?php body_class(); ?>>

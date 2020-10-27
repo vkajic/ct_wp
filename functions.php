@@ -89,9 +89,11 @@ function latest_post_from_date( $task ) {
 function ct_task_type_mapping( $type ) {
 	if ( $type === 'fulltime' ) {
 		return __( 'Full time', 'cryptotask' );
+	} else if ( $type === 'onetime' ) {
+		return __( 'One time', 'cryptotask' );
+	} else {
+		return __( 'Part time', 'cryptotask' );
 	}
-
-	return __( 'Part time', 'cryptotask' );
 }
 
 function ct_task_location_mapping( $location ) {
