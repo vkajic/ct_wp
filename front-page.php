@@ -33,18 +33,20 @@
                                     class="d-none d-lg-inline"><?php _e( 'Freelancers', 'cryptotask' ); ?></span></u>
                     </a>
                 </div>
+				<?php $categories = $app_db->get_featured_categories( ICL_LANGUAGE_CODE ); ?>
 				<?php $freelancersData = $app_db->get_featured_freelancers( ICL_LANGUAGE_CODE ); ?>
 				<?php $flCount = count( $freelancersData ); ?>
 				<?php $randomTab = rand( 0, $flCount - 1 ); ?>
 				<?php $i = 0; ?>
                 <!-- Nav tabs -->
                 <ul class="nav nav-tabs mb-3" role="tablist" id="freelancers">
-					<?php foreach ( $freelancersData as $cat => $freelancers ) : ?>
+					<?php foreach ( $categories as $category ) : ?>
                         <li class="nav-item">
                             <a class="d-inline nav-link <?php echo $i === $randomTab ? 'active' : ''; ?>"
                                data-toggle="tab"
                                href="#tab-<?php echo $i; ?>" role="tab"
-                               aria-controls="<?php echo md5( $cat ); ?>" aria-selected="true"><?php echo $cat; ?></a>
+                               aria-controls="<?php echo md5( $category->categoryId ); ?>"
+                               aria-selected="true"><?php echo $category->translation; ?></a>
                             <span> / </span>
                         </li>
 						<?php $i ++; ?>
@@ -54,7 +56,8 @@
                 <!-- Tab panes -->
                 <div class="tab-content" id="freelancersContent">
 					<?php $i = 0; ?>
-					<?php foreach ( $freelancersData as $cat => $freelancers ) : ?>
+					<?php foreach ( $categories as $category ) : ?>
+						<?php $freelancers = $freelancersData[ $category->categoryId ]; ?>
                         <div class="tab-pane fade <?php echo $i === $randomTab ? 'show active' : ''; ?>"
                              id="tab-<?php echo $i; ?>"
                              role="tabpanel">
@@ -89,7 +92,7 @@
                     <h3 class="mb-0 mr-3"><?php _e( 'Featured Projects', 'cryptotask' ); ?></h3>
 					<?php if ( count( $projects ) ) : ?>
                         <span>
-                            <?php _e( 'Latest post', 'cryptotask' ); ?> <?php echo latest_post_from_date( $projects[0] ); ?> <?php _e( 'ago', 'cryptotask' ); ?>
+                            <?php _e( 'Latest post', 'cryptotask' ); ?>&nbsp;<?php echo latest_post_from_date( $projects[0] ); ?>&nbsp;<?php _e( 'ago', 'cryptotask' ); ?>
                         </span>
 					<?php endif; ?>
                 </div>
@@ -136,10 +139,11 @@
                         </button>
                     </div>
                     <div class="modal-body">
-	                    <?php _e( 'Welcome to new Freelance.hr', 'cryptotask' ); ?>
+						<?php _e( 'Welcome to new Freelance.hr', 'cryptotask' ); ?>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal"><?php _e( 'Close', 'cryptotask' ); ?></button>
+                        <button type="button" class="btn btn-secondary"
+                                data-dismiss="modal"><?php _e( 'Close', 'cryptotask' ); ?></button>
                     </div>
                 </div>
             </div>
