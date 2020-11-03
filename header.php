@@ -34,8 +34,7 @@
                                      data-dark="<?php bloginfo( 'template_url' ); ?>/assets/img/powered_by_cryptotask_nocni.png"
                                      alt="Freelance.hr" class="d-none logo-image">
 	                        <?php else : ?>
-                                <img data-light="<?php bloginfo( 'template_url' ); ?>/assets/img/cryptotask-logo.svg"
-                                     data-dark="<?php bloginfo( 'template_url' ); ?>/assets/img/cryptotask-logo--light.svg"
+                                <img src="<?php bloginfo( 'template_url' ); ?>/assets/img/cryptotask-logo-only.svg"
                                      alt="Cryptotask" class="d-none logo-image">
 	                        <?php endif; ?>
                         </span>
