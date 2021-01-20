@@ -120,10 +120,7 @@
 
         <div class="row">
             <div class="col-12 col-lg-3 offset-lg-1">
-                <h4 class="mb-4"><?php _e( 'Our Mission', 'cryptotask' ); ?></h4>
-                <p class="lead">
-					<?php _e( 'We are dedicated to helping freelancers and companies rethink how to do business. We offer SmartContract powered solution for reducing fees and legal overhead.', 'cryptotask' ); ?>
-                </p>
+                <?php if ( dynamic_sidebar('mission_sidebar') ) : else : endif; ?>
             </div>
         </div>
     </div>

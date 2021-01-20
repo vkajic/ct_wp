@@ -17,6 +17,23 @@
 
         gtag('config', '<?php echo $currentLanguage == 'en' ? 'UA-109515146-1' : 'UA-187530-34'; ?>');
     </script>
+    <!-- Facebook Pixel Code -->
+    <script>
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+            n.queue=[];t=b.createElement(e);t.async=!0;
+            t.src=v;s=b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t,s)}(window, document,'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '366101914624114');
+        fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+                   src="https://www.facebook.com/tr?id=366101914624114&ev=PageView&noscript=1"
+        /></noscript>
+    <!-- End Facebook Pixel Code -->
 </head>
 
 <body <?php body_class(); ?>>
@@ -34,7 +51,8 @@
                                      data-dark="<?php bloginfo( 'template_url' ); ?>/assets/img/powered_by_cryptotask_nocni.png"
                                      alt="Freelance.hr" class="d-none logo-image">
 	                        <?php else : ?>
-                                <img src="<?php bloginfo( 'template_url' ); ?>/assets/img/cryptotask-logo-only.svg"
+                                <img data-light="<?php bloginfo( 'template_url' ); ?>/assets/img/cryptotask-logo.svg"
+                                     data-dark="<?php bloginfo( 'template_url' ); ?>/assets/img/cryptotask-logo--light.svg"
                                      alt="Cryptotask" class="d-none logo-image">
 	                        <?php endif; ?>
                         </span>
@@ -68,8 +86,8 @@
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
 						<?php foreach ( $languages as $lang ) : ?>
-                            <a class="dropdown-item"
-                               href="<?php echo $lang['url']; ?>"><?php echo $lang['native_name']; ?></a>
+                            <a class="dropdown-item tst"
+                               href="<?php echo $lang['url']; ?>"><?php echo ct_get_language_section($lang['native_name']); ?></a>
 						<?php endforeach; ?>
                     </div>
                 </div>

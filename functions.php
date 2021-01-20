@@ -19,14 +19,14 @@ function add_theme_scripts() {
 		'popper'
 	], '4.3.1' );
 	wp_enqueue_script( 'feather', '//cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js', [ 'jquery' ], '0.0.1' );
-	wp_enqueue_script( 'custom', get_template_directory_uri() . '/assets/js/custom.js', [ 'jquery' ], '0.0.4' );
+	wp_enqueue_script( 'custom', get_template_directory_uri() . '/assets/js/custom.js', [ 'jquery' ], '0.0.6' );
 
 	$css = cryptotask_get_option( 'app_css' );
 
 	if ( $css ) {
 		wp_enqueue_style( 'app', cryptotask_get_option( 'app_css' ), array(), '0.0.1', 'all' );
 	}
-	wp_enqueue_style( 'style', get_stylesheet_uri(), [ 'app' ], '0.0.4' );
+	wp_enqueue_style( 'style', get_stylesheet_uri(), [ 'app' ], '0.0.6' );
 }
 
 add_action( 'wp_enqueue_scripts', 'add_theme_scripts' );
@@ -103,3 +103,26 @@ function ct_task_location_mapping( $location ) {
 
 	return __( 'Remote', 'cryptotask' );
 }
+
+function ct_get_language_section($languageName) {
+	$map = [
+		'Hrvatski' => 'Hrvatska sekcija',
+		'English' => 'English section'
+	];
+
+	return $map[$languageName];
+}
+
+function ct_widgets_init() {
+
+	register_sidebar( array(
+		'name'          => 'Mission sidebar',
+		'id'            => 'mission_sidebar',
+		'before_widget' => '<div>',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h4 class="mb-4">',
+		'after_title'   => '</h4>',
+	) );
+
+}
+add_action( 'widgets_init', 'ct_widgets_init' );
