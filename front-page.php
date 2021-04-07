@@ -67,7 +67,7 @@
 										<?php foreach ( $freelancers as $freelancer ) : ?>
                                             <li class="col-6 col-xl-4">
                                                 <div class="pb-5">
-                                                    <a href="<?php echo cryptotask_get_option( 'app_url_' . ICL_LANGUAGE_CODE ); ?>/freelancers/<?php echo $freelancer['id']; ?>"
+                                                    <a href="<?php echo cryptotask_get_option( 'app_url_' . ICL_LANGUAGE_CODE ); ?>/freelancers/<?php echo $freelancer['slug']; ?>/<?php echo $freelancer['id']; ?>"
                                                        class="freelancer d-block app-link">
                                                         <img class="avatar d-block mb-3"
                                                              src="<?php echo $freelancer['picture']; ?>"
@@ -102,7 +102,7 @@
                         <li class="mb-4 mb-lg-5">
 							<?php echo $project->client_name; ?>
                             <h3 class="my-2">
-                                <a href="<?php echo cryptotask_get_option( 'app_url_' . ICL_LANGUAGE_CODE ); ?>/tasks/<?php echo $project->id; ?>"
+                                <a href="<?php echo cryptotask_get_option( 'app_url_' . ICL_LANGUAGE_CODE ); ?>/tasks/<?php echo $project->slug; ?>/<?php echo $project->id; ?>"
                                    class="app-link">
 									<?php echo $project->title; ?>
                                 </a>
